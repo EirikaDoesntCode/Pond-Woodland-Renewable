@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://f5wwfmwsviy1"]
+
+[ext_resource type="Script" path="res://LossScreen.gd" id="1_mwkxc"]
+
+[node name="LossScreen" type="Node2D"]
+script = ExtResource("1_mwkxc")
+
+[node name="Return" type="Button" parent="."]
+offset_left = 414.0
+offset_top = 162.0
+offset_right = 637.0
+offset_bottom = 286.0
+text = "Return to Title Screen"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 413.0
+offset_top = 329.0
+offset_right = 636.0
+offset_bottom = 453.0
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 452.0
+offset_top = 65.0
+offset_right = 600.0
+offset_bottom = 130.0
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -1,87 +1,86 @@
-[gd_scene load_steps=3 format=3 uid="uid://qq470stoqdju"]
+[gd_scene load_steps=5 format=3 uid="uid://qq470stoqdju"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_iowbh"]
 [ext_resource type="Script" path="res://Fish.gd" id="2_ww6fr"]
+[ext_resource type="Script" path="res://Wood.gd" id="3_dx1jr"]
+[ext_resource type="Script" path="res://eggs.gd" id="4_36bnj"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_iowbh")
 
 [node name="Beaver" type="Button" parent="."]
-offset_left = 80.0
-offset_top = 58.0
-offset_right = 245.0
-offset_bottom = 148.0
+offset_left = 851.0
+offset_top = 339.0
+offset_right = 1016.0
+offset_bottom = 429.0
 text = "Beaver Woodcutting"
 
 [node name="FoxHole" type="Button" parent="."]
-offset_left = 811.0
-offset_top = 265.0
-offset_right = 960.0
-offset_bottom = 355.0
+offset_left = 470.0
+offset_top = 14.0
+offset_right = 619.0
+offset_bottom = 104.0
 text = "Fox hole"
 
 [node name="BuyEgg" type="Button" parent="."]
-offset_left = 490.0
-offset_top = 490.0
-offset_right = 639.0
-offset_bottom = 580.0
+offset_left = 474.0
+offset_top = 298.0
+offset_right = 623.0
+offset_bottom = 388.0
 text = "Buy egg"
 
 [node name="TownHall" type="Button" parent="."]
-offset_left = 491.0
-offset_top = 60.0
-offset_right = 640.0
-offset_bottom = 150.0
+offset_left = 475.0
+offset_top = 487.0
+offset_right = 624.0
+offset_bottom = 577.0
 text = "Town hall"
 
 [node name="Shrine" type="Button" parent="."]
-offset_left = 495.0
-offset_top = 252.0
-offset_right = 644.0
-offset_bottom = 342.0
+offset_left = 472.0
+offset_top = 124.0
+offset_right = 621.0
+offset_bottom = 214.0
 text = "Shrine"
 
 [node name="BearLtd" type="Button" parent="."]
-offset_left = 70.0
-offset_top = 237.0
-offset_right = 219.0
-offset_bottom = 327.0
+offset_left = 116.0
+offset_top = 345.0
+offset_right = 265.0
+offset_bottom = 435.0
 text = "Bear fishing ltd."
 
 [node name="Fish" type="Label" parent="."]
-offset_left = 869.0
-offset_top = 12.0
-offset_right = 932.0
-offset_bottom = 40.0
+offset_left = 135.0
+offset_top = 18.0
+offset_right = 198.0
+offset_bottom = 46.0
 text = "Fish: 0"
 script = ExtResource("2_ww6fr")
 
 [node name="Wood" type="Label" parent="."]
-offset_left = 961.0
+offset_left = 883.0
 offset_top = 14.0
-offset_right = 1024.0
+offset_right = 946.0
 offset_bottom = 42.0
 text = "Wood: 0"
+script = ExtResource("3_dx1jr")
 
-[node name="Wood2" type="Label" parent="."]
-offset_left = 1079.0
-offset_top = 15.0
-offset_right = 1142.0
-offset_bottom = 457.0
-text = "Eggies
-====
-====
-====
-====
-====
-====
-====
-====
-====
-====
-====
-====
-====
-====
-====
-===="
+[node name="eggs" type="Label" parent="."]
+offset_left = 504.0
+offset_top = 16.0
+offset_right = 567.0
+offset_bottom = 47.0
+text = "Eggies: 100
+"
+script = ExtResource("4_36bnj")
+
+[connection signal="egg_changed" from="." to="eggs" method="_on_world_egg_changed"]
+[connection signal="fish_changed" from="." to="Fish" method="_on_world_fish_changed"]
+[connection signal="wood_changed" from="." to="." method="_on_wood_changed"]
+[connection signal="wood_changed" from="." to="Wood" method="_on_world_wood_changed"]
+[connection signal="pressed" from="Beaver" to="." method="_on_beaver_pressed"]
+[connection signal="pressed" from="BuyEgg" to="." method="_on_buy_egg_pressed"]
+[connection signal="pressed" from="TownHall" to="." method="_on_town_hall_pressed"]
+[connection signal="pressed" from="Shrine" to="." method="_on_shrine_pressed"]
+[connection signal="pressed" from="BearLtd" to="." method="_on_bear_ltd_pressed"]
