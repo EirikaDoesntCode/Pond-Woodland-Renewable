@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://qq470stoqdju"]
+
+[node name="World" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_right = 149.0
+offset_bottom = 90.0
+text = "World"

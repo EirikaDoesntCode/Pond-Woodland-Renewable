@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwaqjr60m8eok"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_k6g5r"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_k6g5r")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 109.0
+offset_top = 127.0
+offset_right = 306.0
+offset_bottom = 212.0
+text = "I am a button
+(Play)
+"
+
+[node name="Load" type="Button" parent="."]
+offset_left = 114.0
+offset_top = 263.0
+offset_right = 270.0
+offset_bottom = 353.0
+text = "Button 2
+(Load) probably
+ not happening"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 118.0
+offset_top = 403.0
+offset_right = 249.0
+offset_bottom = 471.0
+text = "Button 3
+(Quit)
+"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
