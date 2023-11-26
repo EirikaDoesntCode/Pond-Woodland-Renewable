@@ -26,6 +26,7 @@ func _process(delta):
 
 
 
+
 func _on_beaver_pressed():
 	emit_signal("wood_changed", _BeaverStrength)
 
